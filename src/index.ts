@@ -6,4 +6,4 @@ list_task.Add("item2");
 list_task.Add("item3");
 list_task.Add("item4");
 
-list_task.mostrar();
+list_task.View();
