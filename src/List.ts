@@ -43,11 +43,35 @@ class List
         console.log("List Finished!")
     }
 
-    public Remove(value: string) :void
+    public Remove(valor_selecionado: string) :void
     {
+        if(this.topo == null)
+        {
+            return;
+            //LISTA VAZIA
+        }
+
+        if(this.topo.valor == valor_selecionado)
+        {
+            this.topo = this.topo.prox;
+            return;
+            //REMOVE DO INICIO
+        }
+
+        let noAtual : No = this.topo;
+
+        while(noAtual.prox != null)
+        {
+            if(noAtual.prox.valor == valor_selecionado)
+            {
+                noAtual.prox = noAtual.prox.prox;
+                return;
+            }
+
+            noAtual = noAtual.prox;
+        }
         
     }
-
 
 }
 
