@@ -1,11 +1,20 @@
 import No from "./No";
 class List
 {
-    public topo : No | null;
+    public topo : No | null ;
 
     constructor()
     {
         this.topo = null;
+    }
+
+    private _isEmpty() : boolean
+    {
+        if(this.topo == null)
+        {
+            return true;
+        }
+        return false;
     }
 
     public Add(valor:string) : void
@@ -69,8 +78,33 @@ class List
             }
 
             noAtual = noAtual.prox;
+        }   
+    }
+
+
+    public Update(valor_anterior: string, valor_atual : string ) : void
+    {
+        if(this.topo == null)
+        {
+            return;
         }
-        
+
+        let noAtual : No = this.topo;
+
+        while(noAtual.prox != null)
+        {
+            if(noAtual.valor == valor_anterior)
+            {
+                noAtual.valor = valor_atual;
+                console.log(`O valor anterior -> ${valor_anterior} foi editado para -> ${valor_atual}!`);
+                return;
+            }
+
+            noAtual = noAtual.prox;
+        }
+
+        console.log(`O valor de -> ${valor_anterior} não foi encontrado na lista!`);
+
     }
 
 }
