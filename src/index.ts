@@ -11,7 +11,11 @@ list_task.Add("item4");
 list_task.Remove("item2");
 
 //ITENS ATUALIZADOS
-list_task.Update("item33", "item11");
+list_task.Update("item44", "item11");
+list_task.Update("item1", "item11");
+
+//PESQUISAR ITENS 
+list_task.Search("item4");
 
 
 //MOSTRAR ITENS

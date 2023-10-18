@@ -107,6 +107,39 @@ class List
 
     }
 
+
+    public Search(valor_selecionado: string ) : void
+    {
+        if(this.topo == null)
+        {
+            console.log("Não existe itens na lista!");
+            return;
+        }
+
+        let noAtual : No = this.topo;
+
+        while(noAtual != null)
+        {
+            if(noAtual.valor == valor_selecionado)
+            {
+                console.log(`O valor -> ${valor_selecionado} foi encontrado!`);
+                return;
+            }
+
+            if(noAtual.prox != null)
+            {
+                noAtual = noAtual.prox;
+            }
+            else 
+            {
+                console.log(`O valor -> ${valor_selecionado} não foi encontrado!`);
+                return;
+            }
+        }
+
+        
+    }
+
 }
 
 
